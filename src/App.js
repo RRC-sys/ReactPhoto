@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+// Components
+import GridPhotos from "./components/GridPhotos";
+import NavBar from "./components/NavBar";
+import Parallaxe from "./components/Parallaxe";
+import Services from "./components/Services";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer"
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <header>
+          <NavBar />
+        </header>
+        <GridPhotos />
+        <Parallaxe photoPath="./images/street.jpg" />
+        <Services/>
+        <Parallaxe photoPath="./images/stars.jpg" />
+        <Contact />
+        <Footer />
+        <Routes>
+          <Route path="/" />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
